@@ -41,22 +41,22 @@ class ComplexNumber
 end
 
 
-obj=ComplexNumber.new(3,2)
-obj2=ComplexNumber.new(1,7)
+# obj=ComplexNumber.new(3,2)
+# obj2=ComplexNumber.new(1,7)
 
 
-obj3=obj+obj2
-puts obj3.print
+# obj3=obj+obj2
+# puts obj3.print
 
-obj3=obj*obj2
-puts obj3.print
+# obj3=obj*obj2
+# puts obj3.print
 
-ComplexNumber.bulk_add([obj,obj2]).print 
-
-
-ComplexNumber.bulk_multiply([obj,obj2]).print
+# ComplexNumber.bulk_add([obj,obj2]).print 
 
 
-ComplexNumber.get_stats
+# ComplexNumber.bulk_multiply([obj,obj2]).print
+
+
+# ComplexNumber.get_stats
 
 
