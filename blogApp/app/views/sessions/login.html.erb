@@ -5,5 +5,8 @@
     <p>Username or Email:</br> <%= text_field_tag(:username_or_email) %></p>
     <p>Password:</br> <%= password_field_tag :login_password %></p>
     <%= submit_tag("Log In") %>
+    <%=  link_to  "register", '/signup' %>
     <% end %>
+    <%=flash.notice%>
+
 </div>

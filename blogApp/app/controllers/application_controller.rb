@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    before_action :authenticate_user, :only => [:home, :profile, :setting]
+    before_action :save_login_state, :only => [:login, :login_attempt]
     protected 
     def authenticate_user
         if session[:user_id]
