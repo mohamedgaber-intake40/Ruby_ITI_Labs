@@ -8,25 +8,37 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <nav>
-  <p class="navbar-text float-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.username %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
-  </nav>
+  
   <body>
+  <div class="container">
+ <div class="row">
+   <div class="col">
+    <nav>
+      <p class="navbar-text float-right mr-1">
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.username %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link btn btn-outline-info btn-sm ' %> 
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn btn-outline-danger btn-sm '  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link btn btn-outline-info btn-sm'  %> 
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link btn btn-outline-info btn-sm'  %>
+    <% end %>
+    </p>
+      </nav>  
+   </div>
+ </div>
     <%= yield %>
-  </body>
-  <% if notice %>
+    <div class="row mt-2">
+      <div class="col-4 mx-auto text-center">
+        <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+      </div>
+    </div>
+  </div>
+  </body>
+  
 </html>

@@ -1,15 +1,12 @@
-<p>
-    <strong>Commenter:</strong>
-    <%= comment.user.username %>
-</p>
-
-<p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-</p>
 
 
-<p>
-    <%=  link_to  "Destory Comment", [comment.article , comment] , method: :delete , data: {confirm: 'Are you sure ?'} %>
 
-</p>
+<div>
+    <p class="border p-4">
+        <strong><%= comment.user.username %> : </strong>
+        <%= comment.body %>
+        <%=  link_to  "Destory Comment", [comment.article , comment] , method: :delete , data: {confirm: 'Are you sure ?'} , class: 'btn btn-danger  btn-sm float-right'%>
+    </p>
+    
+
+</div>

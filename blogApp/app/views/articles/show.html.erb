@@ -1,27 +1,26 @@
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
-
-<p>
-    <strong>Text:</strong>
-    <%= @article.text %>
-</p>
 
 
-<p>
-    <strong>created by:</strong>
-    <%= @article.user.username %>
-</p>
+<div class="row mt-5">
+    <div class="col-6 mx-auto">
 
-
-<h2>Comments</h2>
-<%= render @article.comments%>
-
-
-
-<h2>Add comment</h2>
-<%= render 'comments/form'%>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <%= @article.title %>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">created by:  <%= @article.user.username %></h5>
+              <p class="card-text"> <%= @article.text %></p>
+              <ul>
+                  <!-- <h2>Comments</h2> -->
+                <%= render @article.comments%>
+              </ul>
+              <%= link_to 'Back', articles_path , class: 'btn btn-info mx-auto d-inline'%>
+              <%= link_to 'Edit', edit_article_path(@article) , class: 'btn btn-warning mx-auto d-inline float-right' %> 
+            </div>
+          </div>
+       
+        <h2 class="text-center">Add comment</h2>
+        <%= render 'comments/form'%>
+     
+    </div>
+</div>
