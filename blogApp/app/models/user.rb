@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   
   attr_writer :login
 
+  has_many :articles
+
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 

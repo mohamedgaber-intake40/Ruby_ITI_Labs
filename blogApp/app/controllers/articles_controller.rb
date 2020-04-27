@@ -1,11 +1,14 @@
 class ArticlesController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show]
+    # before_action :authenticate_user!, except: [:index, :show]
+    load_and_authorize_resource
     def new
         @article = Article.new
     end
 
     def create
+        # authorize! :create, @article
         @article = Article.new(article_params)
+        @article.user_id=current_user.id
        
         if @article.save
           redirect_to @article
