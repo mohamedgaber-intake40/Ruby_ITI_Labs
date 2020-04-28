@@ -28,6 +28,10 @@ gem 'jwt'
 #use simple command
 gem 'simple_command'
 
+#use active model serializers
+gem 'active_model_serializers', '~> 0.10.0'
+
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
